@@ -8,7 +8,6 @@ const char* password = "kensentme!";
 
 // own stuff
 const int LED_BUILTIN = 13;
-bool firstrun = 1;
 
 void setup() {
   Serial.begin(115200);
@@ -71,14 +70,15 @@ void setup() {
 }
 
 void loop() {
-  while (millis() < 15000){
-    ArduinoOTA.handle();  
+
+  while (millis() < 15000){ 
+    ArduinoOTA.handle();
+    Serial.println("Handling at " + String(millis()) + " millis...");
   }
-  if (firstrun){
-   Serial.println("No update received"); // Looking for an update should be triggerable... 
-   firstrun = 0;
-  }
+
   digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
-  delay(100);
+  delay(1000);
   digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
+  delay(1000);
+  
 }
