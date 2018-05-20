@@ -1,0 +1,5 @@
+sudo crontab -e
+
+# m h  dom mon dow   command
+@reboot /home/pi/scripts/mqtt2db_runner.sh
+30 * * * * /home/pi/scripts/mqtt2db_runner.sh
