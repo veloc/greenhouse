@@ -24,7 +24,7 @@ WiFiClient espClient;
 #define MQTT_AIR_HUM_TOPIC  "test/air/hum"
 #define MQTT_SOIL_HUM_TOPIC  "test/soil/hum"
 
-int waitForMQTT = 60; // Delay after transmitting messages. 20ms seem to be enough for one transmission
+int waitForMQTT = 80; // Delay after transmitting messages. 20ms seem to be enough for one transmission
 
 /******** DFROBOT Capacitive Soil Moisture Sensor V1.0 Setup ************/
 
@@ -200,7 +200,7 @@ PubSubClient client(MQTT_SERVER, MQTT_SERVERPORT, callback, espClient);
   }
 
   Serial.println("Sleeping after transmitting...");
-  delay (waitForMQTT); //needed because mqtt messages where not being received without delay.
+  delay(waitForMQTT); //needed because mqtt messages where not being received without delay.
   
   //going to sleep....
   Serial.println("Setting SleepDuration = UpdateInterval");
