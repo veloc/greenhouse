@@ -21,24 +21,34 @@ collected data and presents it as a website, accessible from other devices as we
 The ESP32-Modules are connected to a BME280 sensor for air pressure, temperature and humidity.
 
 ## Task list (updated now and then)
-- [ ] Undone Task
-- [x] Done Task
+- [ ] Write a documentation for the Pi-Part
+- [ ] Test the "Giesomat"-Sensors
+- [ ] Determine the needed powersupply to run the Sensor for as long as possible
+- [ ] Sort through the .ino code and make it more easy to read and understand 
+- [ ] Design (and print) a case for the Receiver
+- [ ] Design (and print) a case for the Sensor
+- [ ] Bughunting!
 
 ## Partlist (used or intended to use):
 
 1. Microcontroller
-   - Raspberry Pi 3 Model B	[Link to Amazon] (https://www.amazon.de/gp/product/B01CD5VC92/ref=oh_aui_detailpage_o02_s00?ie=UTF8&psc=1)
-     - Elecrow 5" Touch LCD 	[Link to Amazon] (https://www.amazon.de/gp/product/B013JECYF2/ref=oh_aui_detailpage_o08_s00?ie=UTF8&psc=1)
-   - ESP32 NodeMCU			[Link to Amazon] (https://www.amazon.de/gp/product/B074RG86SR/ref=oh_aui_detailpage_o02_s00?ie=UTF8&psc=1)
+   - Raspberry Pi 3 Model B		https://www.amazon.de/gp/product/B01CD5VC92/ref=oh_aui_detailpage_o02_s00?ie=UTF8&psc=1
+     - Elecrow 5" Touch LCD 	https://www.amazon.de/gp/product/B013JECYF2/ref=oh_aui_detailpage_o08_s00?ie=UTF8&psc=1
+   - ESP32 NodeMCU				https://www.amazon.de/gp/product/B074RG86SR/ref=oh_aui_detailpage_o02_s00?ie=UTF8&psc=1
 2. Sensors
-   - CQRobot Soil Sensor		[Link to Amazon] (https://www.amazon.de/gp/product/B01E8M3JP8/ref=oh_aui_detailpage_o08_s00?ie=UTF8&psc=1)
-   - GY-BME80 Air Sensor 	[Link to Amazon] (https://www.amazon.de/gp/product/B077PNKCQ6/ref=oh_aui_detailpage_o08_s00?ie=UTF8&psc=1)
-   - Giesomat Sensor Rev.2	[Link to Ramser Elektro] (https://www.ramser-elektro.at/shop/bausaetze-und-platinen/giesomat-kapazitiver-bodenfeuchtesensor-erdfeuchtesensor-mit-beschichtung/)
+   - CQRobot Soil Sensor		https://www.amazon.de/gp/product/B01E8M3JP8/ref=oh_aui_detailpage_o08_s00?ie=UTF8&psc=1
+   - GY-BME80 Air Sensor 		https://www.amazon.de/gp/product/B077PNKCQ6/ref=oh_aui_detailpage_o08_s00?ie=UTF8&psc=1
+   - Giesomat Sensor Rev.2		https://www.ramser-elektro.at/shop/bausaetze-und-platinen/giesomat-kapazitiver-bodenfeuchtesensor-erdfeuchtesensor-mit-beschichtung/
 3. Power Supply
-   - Xoro MPB 250 Powerbank	[Link to Amazon] (https://www.amazon.de/gp/product/B00KM44L72/ref=oh_aui_search_detailpage?ie=UTF8&psc=1)
-   - USB Multimeter			[Link to Amazon] (https://www.amazon.de/gp/product/B01DIPF350/ref=oh_aui_search_detailpage?ie=UTF8&psc=1)
-   - 3x AAA Battery Holder	[Link to Amazon] (https://www.amazon.de/gp/product/B01GLOLIX6/ref=oh_aui_detailpage_o04_s00?ie=UTF8&psc=1)
-   - AAA 2400mAh NiMH Akku	[Link to Amazon] (https://www.amazon.de/gp/product/B002HFL5AU/ref=oh_aui_detailpage_o01_s00?ie=UTF8&psc=1)
+   - Xoro MPB 250 Powerbank		https://www.amazon.de/gp/product/B00KM44L72/ref=oh_aui_search_detailpage?ie=UTF8&psc=1
+   - USB Multimeter				https://www.amazon.de/gp/product/B01DIPF350/ref=oh_aui_search_detailpage?ie=UTF8&psc=1
+   - 3x AAA Battery Holder		https://www.amazon.de/gp/product/B01GLOLIX6/ref=oh_aui_detailpage_o04_s00?ie=UTF8&psc=1
+   - AAA 2400mAh NiMH Akku		https://www.amazon.de/gp/product/B002HFL5AU/ref=oh_aui_detailpage_o01_s00?ie=UTF8&psc=1
+   
+## Credits
+- I am using lzkelley´s bkup_rpimage-script from https://github.com/lzkelley/bkup_rpimage
+- My code originally based on the ESP32 Weather Station Project v1.00 from http://educ8s.tv/esp32-weather-station
+- Some of my code is the work of some brilliant people from the internet I just copied and forgot to document - so, if you see your code here, this is directed to YOU! Thanks!
 
 ## Log:
 
@@ -47,18 +57,24 @@ The ESP32-Modules are connected to a BME280 sensor for air pressure, temperature
 I´ve let the Sensor run on battery till it was empty. I am not 100% sure I charged the battery to the maximum
 but it ran for about 102 hours (and 30 minutes). Since I´ve used a 2500mAh battery, this indicates the device
 uses somewhere around 25 mA (or I´ve miscalculated).
-The "USB Safety Tester" [Link to Amazon] (https://www.amazon.de/gp/product/B01DIPF350/ref=oh_aui_search_detailpage?ie=UTF8&psc=1)
+
+The "USB Safety Tester" https://www.amazon.de/gp/product/B01DIPF350/ref=oh_aui_search_detailpage?ie=UTF8&psc=1
 shows strange values (for example, Time not always counts up but stays at a given value, also the "Current Draw"
 is listed as 0.00 A if the ESP is in DeepSleep and around 0.16 A if it is running.). With these values, the battery
 should have lasted longer. I suspect the LED on the batterypack is one of the reasons, the battery only lasted
 ~5 days.
+
 I have ordered some other pices to maybe build my own multimeter with a logging function to be able to determine
 how much current is being drawn when which action is running.
+
 I also ordered another type of batteries (NiMH) and a holder for these. I am a little concerned, the batterypack
 was I originally using might be hazardous.
+
 Since I noticed a couple of odd or unwanted behaviour in my setup, I´ve started a file containing the bugs I found
 (and maybe what I did to remove them eventually...).
+
 The Bugs should be found in the **bugs.md** file.
+
 I also modified this file (a lot) with additional content and formatting.
 
 
