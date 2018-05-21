@@ -4,13 +4,13 @@
 
 Create a setup to monitor multiple points in regards to humidity and temperature.
 The system should
-	- work without an internet connection (but should also be able to be connected to it)
-	- have sensor-modules that use an independent power source (battery, solar powered)
-	- have water proof or "ruggedized" sensor-modules
-	- should be scalable as in how many sensor-modules can be connected
-	- present the values visualized as graphs
-	- create alarms (audible / visual / electronical) if certain criteras are met
-	- be easy to use
+- work without an internet connection (but should also be able to be connected to it)
+- have sensor-modules that use an independent power source (battery, solar powered)
+- have water proof or "ruggedized" sensor-modules
+- should be scalable as in how many sensor-modules can be connected
+- present the values visualized as graphs
+- create alarms (audible / visual / electronical) if certain criteras are met
+- be easy to use
 
 	
 ## Realization (at the moment):
