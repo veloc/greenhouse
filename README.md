@@ -23,8 +23,8 @@ The ESP32-Modules are connected to a BME280 sensor for air pressure, temperature
 ## Task list (updated now and then)
 - [ ] Write a documentation for the Pi-Part
 - [ ] Test the "Giesomat"-Sensors
-- [ ] Determine the needed powersupply to run the Sensor for as long as possible
-- [ ] Sort through the .ino code and make it more easy to read and understand 
+- [ ] Determine the needed powersupply to run the Sensor for as long as possible (a couple of months would be nice...)
+- [ ] Sort through the .ino code and make it more easy to read and to understand 
 - [ ] Design (and print) a case for the Receiver
 - [ ] Design (and print) a case for the Sensor
 - [ ] Bughunting!
