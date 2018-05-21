@@ -3,7 +3,7 @@
 ## Aim:
 
 Create a setup to monitor multiple points in regards to humidity and temperature.
-The system should
+The system should:
 - work without an internet connection (but should also be able to be connected to it)
 - have sensor-modules that use an independent power source (battery, solar powered)
 - have water proof or "ruggedized" sensor-modules
