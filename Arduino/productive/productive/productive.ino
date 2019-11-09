@@ -5,6 +5,30 @@
 #include <WiFi.h>             // wifi-lib (important to use the correct one for esp32!)
 #include "esp_deep_sleep.h"   // deepsleep lib
 
+/********************** PIN Layout ********************/
+
+//                                            +-\/-+
+//                              VIN3.3V  3.3V |    | GND GND
+//                   (RESET)    EN       EN   |    | P23 GPIO23  (VPSIMOSI)
+//                   (ADC0)     GPIO36   SVP  |    | P22 GPIO22
+//                   (ADC3)     GPIO39   SVN  |    | TX  GPIO1   (TX0)
+// *CSMS*            (ADC6)     GPIO34   P34  |    | RX  GPIO3   (RX0)
+//                   (ADC7)     GPIO35   P35  |    | P21 GPIO21
+//          [TOUCH9] (ADC4)     GPIO32   P32  |    | GND GND
+//          [TOUCH8] (ADC5)     GPIO33   P33  |    | P19 GPIO19 (VSPIMISO)
+//                   (ADC18)    GPIO25   P25  |    | P18 GPIO18 (VSPI SCK)
+// *BME280*          (ADC19)    GPIO26   P26  |    | P5  GPIO5  (VSPI SS)
+// *BME280* [TOUCH7] (ADC17)    GPIO27   P27  |    | P17 GPIO17
+//          [TOUCH6] (ADC16)    GPIO14   P14  |    | P16 GPIO16
+//          [TOUCH5] (ADC15)    GPIO12   P12  |    | P4  GPIO4  (ADC10)    [TOUCH0]
+//                              GND      GND  |    | P0  GPIO0  (ADC11)    [TOUCH1]
+//          [TOUCH4] (ADC14)    GPIO13   P13  |    | P2  GPIO2  (ADC12)    [TOUCH2]
+//                   (FLASH D2) GPIO9    SD2  |    | P15 GPIO15 (ADC13)    [TOUCH3]
+//                   (FLASH D3) GPIO10   SD3  |    | SD1 GPIO8  (FLASH D1)
+//                   (FLASHCMD) GPIO11   CMD  |    | SD0 GPIO7  (FLASH D0)
+//                              VIN 5V   5V   |    | CLK GPIO6  (FLASHSCK)
+//                                            +----+
+
 /************************* WiFi Access Point *********************************/
 
 const char* WLAN_SSID = "receiver";
@@ -290,5 +314,3 @@ void do_sleep()
    */
    return value;
  }
-
-

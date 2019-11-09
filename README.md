@@ -13,7 +13,7 @@ The system should
 	- be easy to use
 
 	
-## Realization (at the moment):
+## Realisation (at the moment):
 A raspberryPi with a 5" touchscreen running Raspbian with an SQL-Server, webserver and WLAN accesspoint receives
 data from ESP32-Modules via MQTT-Messages over WLAN. Grafana is used to create a graphical interpretation of the
 collected data and presents it as a website, accessible from other devices as well.
@@ -45,6 +45,21 @@ The ESP32-Modules are connected to a BME280 sensor for air pressure, temperature
    - 3x AAA Battery Holder		https://www.amazon.de/gp/product/B01GLOLIX6/ref=oh_aui_detailpage_o04_s00?ie=UTF8&psc=1
    - AAA 2400mAh NiMH Akku		https://www.amazon.de/gp/product/B002HFL5AU/ref=oh_aui_detailpage_o01_s00?ie=UTF8&psc=1
    
+   
+## Connection Scheme:
+
+PC --> LAN --> Website
+				  ^
+				  |
+				  Pi	<-- Power via AC/DC Wall Adapter
+				  ^
+				  |
+			   Database <-- WLAN <-- ESP32
+										
+										^
+										|
+										Power via Powerbank etc.
+			   
 ## Credits
 - I am using lzkelley´s bkup_rpimage-script from https://github.com/lzkelley/bkup_rpimage
 - My code originally based on the ESP32 Weather Station Project v1.00 from http://educ8s.tv/esp32-weather-station
