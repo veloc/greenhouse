@@ -40,15 +40,15 @@ connect to web
 ##### autofs
 `sudo vim /etc/auto.nfs`
 
-	Add the line:
+Add the line:
 	
-		`Backup          -fstype=nfs,rw,retry=0 192.168.178.4:/Backup`
+`Backup          -fstype=nfs,rw,retry=0 192.168.178.4:/Backup`
 
 `sudo vim /etc/auto.master`
 
-	Add the line:
+Add the line:
 	
-		`/mnt    /etc/auto.nfs`
+`/mnt    /etc/auto.nfs`
 
 `sudo service autofs restart`
 > dont forget to set the permissions serverwise!
