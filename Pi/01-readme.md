@@ -23,9 +23,11 @@ PC --> LAN --> Website <-- Database <-- Pi <-- WLAN <-- ESP32
 ### Post OS deployment
 
 #### Updates
-- connect to web
-	--> `sudo apt update`
-	--> `sudo apt upgrade`
+connect to web
+
+--> `sudo apt update`
+
+--> `sudo apt upgrade`
 	
 #### Additional Software
 - I like editing with vim, so I install vim...
@@ -37,11 +39,15 @@ PC --> LAN --> Website <-- Database <-- Pi <-- WLAN <-- ESP32
 
 ##### autofs
 `sudo vim /etc/auto.nfs`
+
 	Add the line:
+	
 		`Backup          -fstype=nfs,rw,retry=0 192.168.178.4:/Backup`
 
 `sudo vim /etc/auto.master`
+
 	Add the line:
+	
 		`/mnt    /etc/auto.nfs`
 
 `sudo service autofs restart`
@@ -61,5 +67,7 @@ the script now puts a complete backup of the whole sd card onto my NAS.
 
 ### Security & Cosmetics
 `sudo raspi-config`
+
 	--> change User Password
+	
 	--> change Hostname to "greenhouse" 
