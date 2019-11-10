@@ -48,6 +48,7 @@ The ESP32-Modules are connected to a BME280 sensor for air pressure, temperature
    
 ## Connection Scheme:
 
+```
 PC --> LAN --> Website
 				  ^
 				  |
@@ -59,6 +60,7 @@ PC --> LAN --> Website
 										^
 										|
 										Power via Powerbank etc.
+```
 			   
 ## Credits
 - I am using lzkelley´s bkup_rpimage-script from https://github.com/lzkelley/bkup_rpimage

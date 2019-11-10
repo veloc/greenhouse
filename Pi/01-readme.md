@@ -51,12 +51,13 @@ Add the line:
 `/mnt    /etc/auto.nfs`
 
 `sudo service autofs restart`
-> dont forget to set the permissions serverwise!
+**dont forget to set the permissions serverwise!**
 
 ##### bkup_rpimage-script
 I´ve written a little start script to be able to just fire and forget the bkup_rpimage-script.
 My forked version can be found at https://github.com/veloc/bkup_rpimage
-both scripts are being made executable and are being put at /usr/bin:
+
+Both scripts are being made executable and are being put at /usr/bin:
 
 ```
 sudo chmod +x /usr/bin/run_bkup.sh
@@ -68,6 +69,6 @@ the script now puts a complete backup of the whole sd card onto my NAS.
 ### Security & Cosmetics
 `sudo raspi-config`
 
-	--> change User Password
-	
-	--> change Hostname to "greenhouse" 
+--> change User Password
+
+--> change Hostname to "greenhouse" 
