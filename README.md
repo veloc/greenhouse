@@ -50,16 +50,15 @@ The ESP32-Modules are connected to a BME280 sensor for air pressure, temperature
 
 ```
 PC --> LAN --> Website
-				  ^
-				  |
-				  Pi	<-- Power via AC/DC Wall Adapter
-				  ^
-				  |
-			   Database <-- WLAN <-- ESP32
-										
-										^
-										|
-										Power via Powerbank etc.
+                  ^
+                  |
+                  Pi	<-- Power via AC/DC Wall Adapter
+                  ^
+                  |
+               Database <-- WLAN <-- ESP32
+                                        ^
+                                        |
+                                        Power via Powerbank etc.
 ```
 			   
 ## Credits
